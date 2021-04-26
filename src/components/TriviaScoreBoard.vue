@@ -13,7 +13,9 @@
     </div>
     <div v-else id="header">
       <p class="grid-item">
-        Final score: {{ score }}/{{ numberOfQuestions * pointsForCorrectAnswer }}
+        Final score: {{ score }}/{{
+          numberOfQuestions * pointsForCorrectAnswer
+        }}
       </p>
     </div>
     <hr />
@@ -29,8 +31,8 @@
 
 <script>
 import TriviaScreen from "./TriviaScreen";
-import Results from "./TriviaResults";
-import { mapState } from "vuex"
+import Results from "./ResultPage/TriviaResults";
+import { mapState } from "vuex";
 
 export default {
   components: {
@@ -45,7 +47,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["questions", "numberOfQuestions"])
+    ...mapState(["questions", "numberOfQuestions"]),
   },
   methods: {
     // 'selectedOption' refers to the 2nd parameter of the '$emit' method @click in QuestionChild (built-in functionality)
@@ -72,7 +74,7 @@ export default {
 }
 
 .grid-container {
-  display:-ms-grid;
+  display: -ms-grid;
   grid-template-columns: auto auto;
 }
 
