@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1 id="pageTitle">Trivia-Fun-Game!</h1>
+    <h1 id="pageTitle">Trivia-Quiz</h1>
     <TriviaStart v-if="showTrivia" @start-clicked="handleStartClicked" />
     <game-score-board v-if="!showTrivia" />
   </div>
@@ -31,7 +31,7 @@ export default {
 
 <style>
 html {
-  background-color: rgb(163, 142, 142);
+  background-color: rgb(213, 238, 145);
 }
 
 #pageTitle {

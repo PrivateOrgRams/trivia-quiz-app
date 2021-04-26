@@ -50,7 +50,7 @@ export default {
     ...mapState(["questions", "numberOfQuestions"]),
   },
   methods: {
-    // 'selectedOption' refers to the 2nd parameter of the '$emit' method @click in QuestionChild (built-in functionality)
+    
     handleAnswerOptionButtonClicked(selectedOption) {
       const indexOfCurrentQuestion = this.currentQuestion - 1;
       const correctAnswer = this.questions[indexOfCurrentQuestion]
@@ -58,9 +58,9 @@ export default {
       if (selectedOption == correctAnswer) {
         this.score += this.pointsForCorrectAnswer;
       }
-      // Recording the selected option
+      
       this.questions[indexOfCurrentQuestion].selectedOption = selectedOption;
-      // Moving to the next question
+      
       this.currentQuestion++;
     },
   },

@@ -42,16 +42,16 @@ export default {
 </script>
 
 <style>
-#result {
-  padding: 0.5rem;
+/* #result {
+  /* padding: 0.5rem;
   margin: 0.5rem;
   background-color: gray;
-  border-radius: 2rem;
-}
+  border-radius: 2rem; */
+/* } */
 
 .result-grid-container {
   align-items: center;
-  display:grid;
+  display: grid;
   grid-template-columns: 15% 90%;
 }
 

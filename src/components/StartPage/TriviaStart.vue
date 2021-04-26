@@ -1,8 +1,6 @@
 <template>
   <div>
     <div id="intro">
-      <h3>Description:</h3>
-      <p>{{ description }}</p>
       <hr id="option-section" />
       <div class="form">
         <form>
@@ -89,7 +87,7 @@ export default {
 </script>
 
 <style>
-#intro {
+/* #intro {
   border-style: solid;
   padding: 2rem;
 }
@@ -104,7 +102,7 @@ export default {
 
 #option-section {
   margin-bottom: 2em;
-}
+} */
 
 .form {
   display: block;
@@ -159,11 +157,11 @@ label {
   font-size: 25px;
   font-style: oblique;
   padding: 2rem;
-  border-radius: 8rem;
+  border-radius: 2rem;
 }
 
 #button-placement button:hover {
-  background-color: rgb(170, 49, 130);
+  background-color: rgb(85, 233, 79);
 }
 
 #button-placement button:focus {

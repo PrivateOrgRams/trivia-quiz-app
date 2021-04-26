@@ -1,5 +1,5 @@
 <template>
-  <div id="question-area">
+  <div id="quiz-area">
     <h1 v-html="question.mainQuestion"></h1>
     <div class="grid-container">
       <button
@@ -26,32 +26,32 @@ export default {
 
 <style>
 .grid-container {
-  display:-moz-box;
+  display: -moz-box;
   grid-template-columns: auto auto;
 }
 
 .grid-item {
   text-align: center;
   font: bold;
-  padding: 2rem;
+  padding: 1rem;
   margin: 1rem;
 }
 
-#question-area button {
-  border-radius: 25rem;
-  background-color: rgb(99, 155, 66);
-  font-size: 2rem;
+#quiz-area button {
+  border-radius: 5rem;
+  background-color: rgb(79, 177, 216);
+  font-size: 1.5rem;
 }
 
-#question-area button:hover {
+#quiz-area button:hover {
   background-color: rgb(138, 136, 132);
 }
 
-#question-area button:focus {
+#quiz-area button:focus {
   outline: none;
 }
 
-#question-area h1 {
+#quiz-area h1 {
   text-align: center;
 }
 </style>
