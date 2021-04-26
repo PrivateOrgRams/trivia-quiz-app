@@ -1,18 +1,12 @@
 <template>
   <div>
     <hr />
-    <div
-      v-if="currentQuestion <= numberOfQuestions"
-      id="header"
-      class="grid-container"
-    >
-      <p class="grid-item">Score: {{ score }}</p>
-      <p class="grid-item">
-        Question: {{ currentQuestion }}/{{ numberOfQuestions }}
-      </p>
+    <div v-if="currentQuestion <= numberOfQuestions" id="header">
+      <p>Score: {{ score }}</p>
+      <p>Question: {{ currentQuestion }}/{{ numberOfQuestions }}</p>
     </div>
     <div v-else id="header">
-      <p class="grid-item">
+      <p>
         Final score: {{ score }}/{{
           numberOfQuestions * pointsForCorrectAnswer
         }}
@@ -50,7 +44,6 @@ export default {
     ...mapState(["questions", "numberOfQuestions"]),
   },
   methods: {
-    
     handleAnswerOptionButtonClicked(selectedOption) {
       const indexOfCurrentQuestion = this.currentQuestion - 1;
       const correctAnswer = this.questions[indexOfCurrentQuestion]
@@ -58,28 +51,13 @@ export default {
       if (selectedOption == correctAnswer) {
         this.score += this.pointsForCorrectAnswer;
       }
-      
+
       this.questions[indexOfCurrentQuestion].selectedOption = selectedOption;
-      
+
       this.currentQuestion++;
     },
   },
 };
 </script>
 
-<style>
-#header p {
-  font-size: 1.75rem;
-  padding: 0.5rem;
-}
-
-.grid-container {
-  display: -ms-grid;
-  grid-template-columns: auto auto;
-}
-
-.grid-item {
-  text-align: center;
-  font: bold;
-}
-</style>
+<style></style>

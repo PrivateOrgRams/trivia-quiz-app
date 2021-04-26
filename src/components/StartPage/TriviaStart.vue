@@ -10,8 +10,7 @@
             class="form-control-no-ofquestions"
             type="number"
             min="1"
-            max="50"
-            value="10"
+            value="1"
           /><br />
           <label>Type of Questions:</label>
           <select id="selectedType" class="form-control">
@@ -87,33 +86,11 @@ export default {
 </script>
 
 <style>
-/* #intro {
-  border-style: solid;
-  padding: 2rem;
-}
-
-#intro h3 {
-  margin-bottom: 0px;
-}
-
-#intro p {
-  margin-top: 0px;
-}
-
-#option-section {
-  margin-bottom: 2em;
-} */
-
 .form {
   display: block;
   width: 60%;
   max-width: 500px;
   margin: auto;
-}
-
-form {
-  display: inline-block;
-  width: 100%;
 }
 
 .form-control {
@@ -150,21 +127,5 @@ label {
 #button-placement {
   text-align: center;
   margin-top: 2rem;
-}
-
-#button-placement button {
-  background-color: rgb(153, 161, 144);
-  font-size: 25px;
-  font-style: oblique;
-  padding: 2rem;
-  border-radius: 2rem;
-}
-
-#button-placement button:hover {
-  background-color: rgb(85, 233, 79);
-}
-
-#button-placement button:focus {
-  outline: 0;
 }
 </style>

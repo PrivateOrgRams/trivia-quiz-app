@@ -42,12 +42,7 @@ export default {
 </script>
 
 <style>
-/* #result {
-  /* padding: 0.5rem;
-  margin: 0.5rem;
-  background-color: gray;
-  border-radius: 2rem; */
-/* } */
+/*
 
 .result-grid-container {
   align-items: center;
@@ -84,5 +79,8 @@ export default {
 
 #restart-button button:focus {
   outline: 0;
+}*/
+#restart-button {
+  text-align: center;
 }
 </style>
