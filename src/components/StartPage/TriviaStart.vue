@@ -9,33 +9,37 @@
           <label>Number of Questions:</label>
           <input
             id="numberOfQuestions"
-            class="form-control-noofquestions"
+            class="form-control-no-ofquestions"
             type="number"
             min="1"
             max="50"
             value="10"
           /><br />
+          <label>Type of Questions:</label>
+          <select id="selectedType" class="form-control">
+            <option value="0">Any Type</option>
+            <option value="multiple">Mulyiple-Choice</option>
+            <option value="boolean">True/False</option> </select
+          ><br />
           <label>Select Category: </label>
           <select id="selectedCategory" class="form-control">
-           <option value="0">Any Category</option>
-					<option
-        v-for="category in categories"
-        :key="category.id"
-        :value="category.id"
-        >{{category.name}} </option>
-          </select><br />
-          <label >
-				Choose Difficulty
-			</label>
-			<select id="selectedDifficulty"  class="form-control">
-				<option value="0">Any Difficulty</option>
-				<option value="easy">Easy</option>
-				<option value="medium">Medium</option>
-				<option value="hard">Hard</option>
-			</select><br />
-
-          
-          
+            <option value="0">Any Category</option>
+            <option
+              v-for="category in categories"
+              :key="category.id"
+              :value="category.id"
+              >{{ category.name }}
+            </option> </select
+          ><br />
+          <label>
+            Choose Difficulty
+          </label>
+          <select id="selectedDifficulty" class="form-control">
+            <option value="0">Any Difficulty</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option> </select
+          ><br />
         </form>
       </div>
     </div>
@@ -46,40 +50,41 @@
 </template>
 
 <script>
-import { mapMutations, mapActions,mapState } from "vuex";
+import { mapMutations, mapActions, mapState } from "vuex";
 export default {
-  computed:{
-...mapState(["categories"])
+  computed: {
+    ...mapState(["categories"]),
   },
   data() {
     return {
-      description:
-        "Trivia Game For-Fun",
+      description: "Trivia Game For-Fun",
     };
   },
   methods: {
-    ...mapMutations(["setSelectedCategory", "setNumberOfQuestions","setDifficulty"]),
-    ...mapActions(["loadQuestions","loadCategories"]),
+    ...mapMutations([
+      "setSelectedCategory",
+      "setNumberOfQuestions",
+      "setDifficulty",
+      "setType",
+    ]),
+    ...mapActions(["loadQuestions", "loadCategories"]),
     onStartClicked() {
       this.setSelectedCategory(
         document.getElementById("selectedCategory").value
       );
-      this.setDifficulty(
-      document.getElementById("selectedDifficulty").value
-      );
+      this.setDifficulty(document.getElementById("selectedDifficulty").value);
+      this.setType(document.getElementById("selectedType").value);
       this.setNumberOfQuestions(
         document.getElementById("numberOfQuestions").value
       );
       this.loadQuestions().then(() => {
         this.$emit("start-clicked");
       });
-    
     },
-  
   },
-created(){
-  this.loadCategories();
-}
+  created() {
+    this.loadCategories();
+  },
 };
 </script>
 
@@ -125,7 +130,7 @@ form {
   border: 2px solid black;
   border-radius: 4px;
 }
-.form-control-noofquestions {
+.form-control-no-ofquestions {
   display: block;
   width: 93.5%;
   height: 50px;
@@ -152,7 +157,7 @@ label {
 #button-placement button {
   background-color: rgb(153, 161, 144);
   font-size: 25px;
-  font-style:oblique;
+  font-style: oblique;
   padding: 2rem;
   border-radius: 8rem;
 }

@@ -15,6 +15,7 @@ const store = new Vuex.Store({
     questions: [],
     difficulty: "",
     categories: [],
+    type: "",
   },
   mutations: {
     setSelectedCategory: (state, payload) => {
@@ -32,13 +33,17 @@ const store = new Vuex.Store({
     setCategories: (state, payload) => {
       state.categories = payload;
     },
+    setType: (state, payload) => {
+      state.type = payload;
+    },
   },
   actions: {
     async loadQuestions({ state, commit }) {
       const fetchedQuestions = await getAllQuestions(
         state.numberOfQuestions,
         state.selectedCategory,
-        state.difficulty
+        state.difficulty,
+        state.type
       );
       const processedQustions = processFetchedQuestions(fetchedQuestions);
       commit("setQuestions", processedQustions);
@@ -63,6 +68,9 @@ const store = new Vuex.Store({
     },
     categories: (state) => {
       return state.categories;
+    },
+    type: (state) => {
+      return state.type;
     },
   },
 });

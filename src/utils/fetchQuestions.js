@@ -1,8 +1,8 @@
 export { getAllQuestions, processFetchedQuestions, getCategories };
 
-const getAllQuestions = (numberOfQuestions, category, difficulty) => {
+const getAllQuestions = (numberOfQuestions, category, difficulty, type) => {
   return fetch(
-    `https://opentdb.com/api.php?amount=${numberOfQuestions}&category=${category}&difficulty=${difficulty}`
+    `https://opentdb.com/api.php?amount=${numberOfQuestions}&category=${category}&difficulty=${difficulty}&type=${type}`
   )
     .then((response) => response.json())
     .then((response) => response.results);
